@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Custom Experience — Quiet Luxury Portugal</title>
+  <meta name="description" content="Design your private luxury experience across central Portugal. Exclusive, all-inclusive journeys tailored to your preferences.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://quiet-luxury-portugal.vercel.app/custom-experience">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quiet-luxury-portugal.vercel.app/custom-experience">
+  <meta property="og:title" content="Custom Experience — Quiet Luxury Portugal">
+  <meta property="og:description" content="Design your private luxury experience across central Portugal. All-inclusive, fully managed journeys.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Custom Experience — Quiet Luxury Portugal">
+  <meta name="twitter:description" content="Design your private luxury experience across central Portugal.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/logo.png">
+  <link rel="apple-touch-icon" href="assets/img/logo.png">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/custom-experience.css">
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">
+        <img src="assets/img/logo.svg" alt="Quiet Luxury Portugal" class="nav__logo" width="200" height="65">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#included">Included</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="#form-section" class="nav__cta">Plan Yours</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="ce-hero">
+    <div class="ce-hero__bg">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2000&auto=format&fit=crop"
+           alt="Panoramic view of the Portuguese countryside" loading="eager" width="2000" height="1333">
+      <div class="ce-hero__overlay"></div>
+    </div>
+    <div class="ce-hero__content">
+      <h1 class="ce-hero__title">Design your private experience</h1>
+      <p class="ce-hero__subtitle">Exclusive, all-inclusive journeys across central Portugal.</p>
+    </div>
+  </section>
+
+  <!-- Positioning / price -->
+  <section class="ce-pricing">
+    <div class="ce-container">
+      <h2 class="ce-pricing__title">A tailored experience, without compromises</h2>
+      <p class="ce-pricing__text">Every journey is privately designed and fully managed — from transport and experiences to gastronomy and local insights.</p>
+      <p class="ce-pricing__text">Our experiences typically start from <strong>€600 per person, per day.</strong></p>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section id="form-section" class="ce-form-section">
+    <div class="ce-container">
+      <form id="customForm" class="ce-form" novalidate>
+
+        <!-- Price acceptance -->
+        <div class="ce-block ce-block--price">
+          <label class="ce-checkbox-single">
+            <input type="checkbox" name="accepted_price" id="acceptedPrice" required>
+            <span class="ce-checkbox-single__mark"></span>
+            <span class="ce-checkbox-single__label">I understand that experiences start from €600 per person/day</span>
+          </label>
+          <p class="ce-field-error" id="priceError">Please accept to continue.</p>
+        </div>
+
+        <!-- Basic info -->
+        <div class="ce-block">
+          <h3 class="ce-block__title">Basic Info</h3>
+          <div class="ce-fields">
+            <div class="ce-field">
+              <input type="text" name="name" placeholder="Full Name" required autocomplete="name">
+              <p class="ce-field-error" id="nameError">Name is required.</p>
+            </div>
+            <div class="ce-field">
+              <input type="email" name="email" placeholder="Email" required autocomplete="email">
+              <p class="ce-field-error" id="emailError">Valid email is required.</p>
+            </div>
+            <div class="ce-field">
+              <input type="tel" name="phone" placeholder="Phone / WhatsApp (optional)" autocomplete="tel">
+            </div>
+            <div class="ce-field">
+              <input type="text" name="dates" placeholder="Travel Dates (e.g. June 10–15)">
+            </div>
+            <div class="ce-field">
+              <label class="ce-field__label">Number of People</label>
+              <div class="ce-radio-group">
+                <label class="ce-radio"><input type="radio" name="people" value="1"><span>1</span></label>
+                <label class="ce-radio"><input type="radio" name="people" value="2" checked><span>2</span></label>
+                <label class="ce-radio"><input type="radio" name="people" value="3-5"><span>3–5</span></label>
+                <label class="ce-radio"><input type="radio" name="people" value="6+"><span>6+</span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Monuments -->
+        <div class="ce-block">
+          <h3 class="ce-block__title">Monuments</h3>
+          <div class="ce-block__images">
+            <img src="https://images.unsplash.com/photo-1588004158887-35f4a36b0c71?q=80&w=600&auto=format&fit=crop" alt="Batalha Monastery" loading="lazy" width="600" height="400">
+            <img src="https://images.unsplash.com/photo-1613336026275-d6d473084e2c?q=80&w=600&auto=format&fit=crop" alt="University of Coimbra" loading="lazy" width="600" height="400">
+          </div>
+          <div class="ce-checkbox-group">
+            <label class="ce-checkbox"><input type="checkbox" name="monuments" value="Batalha Monastery"><span>Batalha Monastery</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="monuments" value="Alcobaça Monastery"><span>Alcobaça Monastery</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="monuments" value="Convent of Christ (Tomar)"><span>Convent of Christ (Tomar)</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="monuments" value="University of Coimbra"><span>University of Coimbra</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="monuments" value="Leiria Castle"><span>Leiria Castle</span></label>
+          </div>
+        </div>
+
+        <!-- Cities & Areas -->
+        <div class="ce-block">
+          <h3 class="ce-block__title">Cities & Areas</h3>
+          <div class="ce-block__images">
+            <img src="https://images.unsplash.com/photo-1564221710304-0b37c8b9d729?q=80&w=600&auto=format&fit=crop" alt="Aveiro colorful boats" loading="lazy" width="600" height="400">
+            <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=600&auto=format&fit=crop" alt="Coimbra cityscape" loading="lazy" width="600" height="400">
+          </div>
+          <div class="ce-checkbox-group">
+            <label class="ce-checkbox"><input type="checkbox" name="cities" value="Coimbra"><span>Coimbra</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="cities" value="Aveiro"><span>Aveiro</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="cities" value="Nazaré"><span>Nazaré</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="cities" value="Óbidos"><span>Óbidos</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="cities" value="Tomar"><span>Tomar</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="cities" value="Fátima"><span>Fátima</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="cities" value="Hidden villages"><span>Hidden villages</span></label>
+          </div>
+        </div>
+
+        <!-- Gastronomy -->
+        <div class="ce-block">
+          <h3 class="ce-block__title">Gastronomy</h3>
+          <div class="ce-block__images">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=600&auto=format&fit=crop" alt="Wine tasting" loading="lazy" width="600" height="400">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=600&auto=format&fit=crop" alt="Portuguese cuisine" loading="lazy" width="600" height="400">
+          </div>
+          <div class="ce-checkbox-group">
+            <label class="ce-checkbox"><input type="checkbox" name="gastronomy" value="Wine tasting"><span>Wine tasting</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="gastronomy" value="Traditional food"><span>Traditional food</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="gastronomy" value="Fine dining"><span>Fine dining</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="gastronomy" value="Food markets"><span>Food markets</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="gastronomy" value="Local sweets"><span>Local sweets</span></label>
+          </div>
+        </div>
+
+        <!-- Points of Interest -->
+        <div class="ce-block">
+          <h3 class="ce-block__title">Points of Interest</h3>
+          <div class="ce-block__images ce-block__images--single">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" alt="Portuguese coastline" loading="lazy" width="800" height="400">
+          </div>
+          <div class="ce-checkbox-group">
+            <label class="ce-checkbox"><input type="checkbox" name="points" value="Coastal views"><span>Coastal views</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="points" value="Nature parks"><span>Nature parks</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="points" value="Religious sites"><span>Religious sites</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="points" value="Scenic viewpoints"><span>Scenic viewpoints</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="points" value="Cultural landmarks"><span>Cultural landmarks</span></label>
+          </div>
+        </div>
+
+        <!-- Activities -->
+        <div class="ce-block">
+          <h3 class="ce-block__title">Activities</h3>
+          <div class="ce-checkbox-group">
+            <label class="ce-checkbox"><input type="checkbox" name="activities" value="Boat tours"><span>Boat tours</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="activities" value="Surfing lessons"><span>Surfing lessons</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="activities" value="Horse riding"><span>Horse riding</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="activities" value="Spa & wellness"><span>Spa & wellness</span></label>
+            <label class="ce-checkbox"><input type="checkbox" name="activities" value="Cooking classes"><span>Cooking classes</span></label>
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="ce-block">
+          <h3 class="ce-block__title">Additional Notes</h3>
+          <textarea name="notes" rows="4" placeholder="Anything else you'd like us to know..."></textarea>
+        </div>
+
+        <!-- Submit -->
+        <div class="ce-submit">
+          <button type="submit" class="btn btn--gold btn--large">Request My Experience</button>
+        </div>
+
+      </form>
+
+      <!-- Confirmation -->
+      <div id="confirmation" class="ce-confirmation" hidden>
+        <h2>Thank you</h2>
+        <p>We've received your preferences.</p>
+        <p>Our team will reach out within 24 hours to start crafting your experience.</p>
+        <a href="index.html" class="btn btn--gold">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <img src="assets/img/logo.svg" alt="Quiet Luxury Portugal" class="footer__logo" width="200" height="65">
+      <p class="footer__brand">Quiet Luxury Portugal</p>
+      <p class="footer__tagline">Private Hosted Experiences</p>
+      <div class="footer__links">
+        <a href="mailto:hello@quietluxuryportugal.com">hello@quietluxuryportugal.com</a>
+      </div>
+      <p class="footer__copy">&copy; 2026 Quiet Luxury Portugal. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/351000000000" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M16.004 0C7.165 0 .003 7.16.003 15.997c0 2.82.737 5.573 2.14 7.998L.003 32l8.207-2.108a15.94 15.94 0 007.794 2.02C24.842 31.912 32 24.752 32 15.997 32 7.16 24.842 0 16.004 0zm0 29.29a13.29 13.29 0 01-6.97-1.97l-.5-.298-5.18 1.33 1.387-5.04-.326-.52A13.22 13.22 0 012.63 15.997c0-7.38 6.002-13.38 13.374-13.38 7.373 0 13.375 6 13.375 13.38 0 7.38-6.002 13.294-13.375 13.294zm7.328-10.016c-.4-.2-2.37-1.17-2.74-1.302-.37-.134-.638-.2-.906.2s-1.04 1.302-1.275 1.57-.47.3-.87.1c-.4-.2-1.69-.623-3.22-1.987-1.19-1.062-1.994-2.374-2.228-2.774s-.025-.618.175-.817c.18-.18.4-.47.6-.704.2-.235.267-.4.4-.668.134-.268.067-.502-.033-.703-.1-.2-.906-2.184-1.242-2.99-.326-.783-.66-.677-.906-.69l-.772-.012c-.268 0-.703.1-1.07.502-.37.4-1.41 1.378-1.41 3.36 0 1.983 1.443 3.898 1.644 4.166.2.268 2.84 4.332 6.88 6.074.96.416 1.71.664 2.296.85.965.306 1.843.264 2.537.16.774-.115 2.372-.97 2.706-1.905.335-.936.335-1.738.235-1.905-.1-.168-.368-.268-.77-.47z"/>
+    </svg>
+  </a>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/custom-experience.js"></script>
+</body>
+</html>

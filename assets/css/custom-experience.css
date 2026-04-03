@@ -1,0 +1,481 @@
+/* custom-experience page */
+
+/* Hero */
+.ce-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.ce-hero__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.ce-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.ce-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.45) 0%,
+    rgba(10, 10, 10, 0.7) 60%,
+    rgba(10, 10, 10, 0.9) 100%
+  );
+}
+
+.ce-hero__content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.ce-hero__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: var(--white-bright);
+  letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.ce-hero__subtitle {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Container */
+.ce-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Pricing section */
+.ce-pricing {
+  padding: 6rem 0;
+  text-align: center;
+  background: var(--black);
+  position: relative;
+}
+
+.ce-pricing__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--white-bright);
+  margin-bottom: 2rem;
+  letter-spacing: 0.02em;
+}
+
+.ce-pricing__text {
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  color: var(--white);
+  line-height: 1.9;
+  margin-bottom: 0.8rem;
+}
+
+.ce-pricing__text strong {
+  color: var(--gold);
+}
+
+/* Form section */
+.ce-form-section {
+  padding: 4rem 0 8rem;
+  background: var(--dark);
+}
+
+.ce-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Blocks */
+.ce-block {
+  background: var(--dark-soft);
+  border: 1px solid rgba(198, 168, 107, 0.1);
+  border-radius: 8px;
+  padding: 2.5rem;
+}
+
+.ce-block--price {
+  background: rgba(198, 168, 107, 0.06);
+  border-color: var(--gold-dark);
+  text-align: center;
+  padding: 2rem 2.5rem;
+}
+
+.ce-block__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: var(--white-bright);
+  margin-bottom: 2rem;
+  letter-spacing: 0.02em;
+}
+
+/* Block images */
+.ce-block__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.ce-block__images--single {
+  grid-template-columns: 1fr;
+}
+
+.ce-block__images img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.5s ease;
+}
+
+.ce-block__images img:hover {
+  transform: scale(1.03);
+}
+
+/* Input fields */
+.ce-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.ce-field input,
+.ce-form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(198, 168, 107, 0.2);
+  padding: 1rem 1.3rem;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--white-bright);
+  outline: none;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  border-radius: 4px;
+}
+
+.ce-field input::placeholder,
+.ce-form textarea::placeholder {
+  color: var(--gray);
+  letter-spacing: 0.04em;
+}
+
+.ce-field input:focus,
+.ce-form textarea:focus {
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ce-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.ce-field__label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--gray-light);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.8rem;
+}
+
+.ce-field-error {
+  display: none;
+  font-size: 0.8rem;
+  color: #e36565;
+  margin-top: 0.4rem;
+}
+
+.ce-field-error.is-visible {
+  display: block;
+}
+
+.ce-field input.is-invalid {
+  border-color: #e36565;
+}
+
+/* Radio buttons (number of people) */
+.ce-radio-group {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.ce-radio {
+  cursor: pointer;
+}
+
+.ce-radio input {
+  display: none;
+}
+
+.ce-radio span {
+  display: inline-block;
+  padding: 0.6rem 1.6rem;
+  border: 1px solid rgba(198, 168, 107, 0.25);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--white);
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.ce-radio input:checked + span {
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold);
+  font-weight: 500;
+}
+
+.ce-radio span:hover {
+  border-color: var(--gold);
+}
+
+/* Checkbox group */
+.ce-checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.ce-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  padding: 0.4rem 0;
+}
+
+.ce-checkbox input {
+  display: none;
+}
+
+.ce-checkbox span {
+  position: relative;
+  padding-left: 2rem;
+  font-size: 0.95rem;
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+
+.ce-checkbox span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(198, 168, 107, 0.35);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.ce-checkbox span::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-60%) rotate(45deg) scale(0);
+  width: 6px;
+  height: 11px;
+  border-right: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
+  transition: transform 0.2s ease;
+}
+
+.ce-checkbox input:checked + span::before {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.ce-checkbox input:checked + span::after {
+  transform: translateY(-60%) rotate(45deg) scale(1);
+}
+
+.ce-checkbox input:checked + span {
+  color: var(--gold-light);
+}
+
+/* Price checkbox (single, centered) */
+.ce-checkbox-single {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.ce-checkbox-single input {
+  display: none;
+}
+
+.ce-checkbox-single__mark {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid var(--gold);
+  border-radius: 4px;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.ce-checkbox-single input:checked + .ce-checkbox-single__mark {
+  background: var(--gold);
+}
+
+.ce-checkbox-single__mark::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 7px;
+  height: 12px;
+  border-right: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.2s ease;
+}
+
+.ce-checkbox-single input:checked + .ce-checkbox-single__mark::after {
+  transform: rotate(45deg) scale(1);
+}
+
+.ce-checkbox-single__label {
+  font-size: 0.95rem;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+/* Submit */
+.ce-submit {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.btn--large {
+  padding: 1.2rem 4rem;
+  font-size: 0.95rem;
+}
+
+/* Confirmation */
+.ce-confirmation {
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.ce-confirmation h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 2.4rem;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.ce-confirmation p {
+  font-size: 1.1rem;
+  color: var(--white);
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+.ce-confirmation .btn {
+  margin-top: 2.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ce-hero {
+    height: 50vh;
+    min-height: 320px;
+  }
+
+  .ce-hero__title {
+    font-size: clamp(1.6rem, 8vw, 2.6rem);
+    padding: 0 0.5rem;
+  }
+
+  .ce-pricing {
+    padding: 4rem 0;
+  }
+
+  .ce-form-section {
+    padding: 2.5rem 0 5rem;
+  }
+
+  .ce-form {
+    gap: 2.5rem;
+  }
+
+  .ce-block {
+    padding: 1.8rem 1.4rem;
+  }
+
+  .ce-block__images img {
+    height: 140px;
+  }
+
+  .btn--large {
+    padding: 1.1rem 2.5rem;
+    font-size: 0.88rem;
+    width: 100%;
+  }
+
+  .ce-field input,
+  .ce-form textarea {
+    font-size: 16px;
+    padding: 0.9rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ce-container {
+    padding: 0 1rem;
+  }
+
+  .ce-block {
+    padding: 1.5rem 1rem;
+  }
+
+  .ce-block__images {
+    grid-template-columns: 1fr;
+  }
+
+  .ce-block__images img {
+    height: 160px;
+  }
+
+  .ce-radio-group {
+    gap: 0.6rem;
+  }
+
+  .ce-radio span {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
