@@ -1,10 +1,9 @@
 /* custom-experience page */
 
-/* Hero */
 .ce-hero {
   position: relative;
-  height: 60vh;
-  min-height: 400px;
+  height: 55vh;
+  min-height: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,19 +59,17 @@
   text-transform: uppercase;
 }
 
-/* Container */
 .ce-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-/* Pricing section */
+/* Pricing */
 .ce-pricing {
   padding: 6rem 0;
   text-align: center;
   background: var(--black);
-  position: relative;
 }
 
 .ce-pricing__title {
@@ -81,7 +78,6 @@
   font-size: clamp(1.6rem, 4vw, 2.4rem);
   color: var(--white-bright);
   margin-bottom: 2rem;
-  letter-spacing: 0.02em;
 }
 
 .ce-pricing__text {
@@ -104,7 +100,16 @@
 .ce-form {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 3rem;
+}
+
+/* Loading state */
+.ce-loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--gray-light);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
 }
 
 /* Blocks */
@@ -128,36 +133,44 @@
   font-size: 1.4rem;
   color: var(--white-bright);
   margin-bottom: 2rem;
-  letter-spacing: 0.02em;
 }
 
-/* Block images */
-.ce-block__images {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+/* Horizontal image carousel */
+.ce-carousel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   margin-bottom: 2rem;
-  border-radius: 6px;
-  overflow: hidden;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  padding: 0 0.5rem;
 }
 
-.ce-block__images--single {
-  grid-template-columns: 1fr;
+.ce-carousel::-webkit-scrollbar {
+  display: none;
 }
 
-.ce-block__images img {
-  width: 100%;
+.ce-carousel__track {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.ce-carousel__img {
+  flex-shrink: 0;
+  width: 260px;
   height: 180px;
   object-fit: cover;
   border-radius: 6px;
-  transition: transform 0.5s ease;
+  scroll-snap-align: start;
+  transition: transform 0.4s ease;
 }
 
-.ce-block__images img:hover {
-  transform: scale(1.03);
+.ce-carousel__img:hover {
+  transform: scale(1.02);
 }
 
-/* Input fields */
+/* Fields */
 .ce-fields {
   display: flex;
   flex-direction: column;
@@ -219,7 +232,43 @@
   border-color: #e36565;
 }
 
-/* Radio buttons (number of people) */
+/* Date picker row */
+.ce-date-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.ce-date-field {
+  flex: 1;
+}
+
+.ce-date-field label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gray-light);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.ce-date-field input[type="date"] {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(198, 168, 107, 0.2);
+  padding: 0.9rem 1rem;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--white-bright);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  color-scheme: dark;
+}
+
+.ce-date-field input[type="date"]:focus {
+  border-color: var(--gold);
+}
+
+/* Radio group */
 .ce-radio-group {
   display: flex;
   gap: 0.8rem;
@@ -323,7 +372,7 @@
   color: var(--gold-light);
 }
 
-/* Price checkbox (single, centered) */
+/* Price checkbox */
 .ce-checkbox-single {
   display: inline-flex;
   align-items: center;
@@ -369,7 +418,6 @@
 .ce-checkbox-single__label {
   font-size: 0.95rem;
   color: var(--white);
-  letter-spacing: 0.02em;
 }
 
 /* Submit */
@@ -411,8 +459,8 @@
 /* Responsive */
 @media (max-width: 768px) {
   .ce-hero {
-    height: 50vh;
-    min-height: 320px;
+    height: 45vh;
+    min-height: 300px;
   }
 
   .ce-hero__title {
@@ -429,15 +477,16 @@
   }
 
   .ce-form {
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   .ce-block {
     padding: 1.8rem 1.4rem;
   }
 
-  .ce-block__images img {
-    height: 140px;
+  .ce-carousel__img {
+    width: 220px;
+    height: 150px;
   }
 
   .btn--large {
@@ -447,7 +496,8 @@
   }
 
   .ce-field input,
-  .ce-form textarea {
+  .ce-form textarea,
+  .ce-date-field input[type="date"] {
     font-size: 16px;
     padding: 0.9rem 1rem;
   }
@@ -462,12 +512,13 @@
     padding: 1.5rem 1rem;
   }
 
-  .ce-block__images {
-    grid-template-columns: 1fr;
+  .ce-carousel__img {
+    width: 200px;
+    height: 140px;
   }
 
-  .ce-block__images img {
-    height: 160px;
+  .ce-date-row {
+    flex-direction: column;
   }
 
   .ce-radio-group {

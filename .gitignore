@@ -1,6 +1,11 @@
 .vercel
 node_modules
+package.json
+package-lock.json
 .DS_Store
 Thumbs.db
 *.pdf
 *.webm
+.env*
+setup/
+.env*.local

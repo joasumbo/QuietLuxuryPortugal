@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Quiet Luxury Portugal</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+  <!-- Login -->
+  <div id="loginView" class="admin-login">
+    <div class="admin-login__card">
+      <img src="assets/img/logo.svg" alt="Logo" class="admin-login__logo">
+      <h1>Admin</h1>
+      <form id="loginForm">
+        <input type="text" id="loginUser" placeholder="Username" autocomplete="username" required>
+        <input type="password" id="loginPass" placeholder="Password" autocomplete="current-password" required>
+        <button type="submit" class="admin-btn admin-btn--gold">Sign in</button>
+        <p id="loginError" class="admin-error" hidden>Invalid credentials.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashView" class="admin-dash" hidden>
+    <header class="admin-header">
+      <div class="admin-header__inner">
+        <a href="index.html" class="admin-header__brand">
+          <img src="assets/img/logo.svg" alt="Logo" height="40">
+        </a>
+        <div class="admin-header__right">
+          <span id="adminEmail" class="admin-header__email"></span>
+          <button id="logoutBtn" class="admin-btn admin-btn--outline">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <h2>Manage Sections</h2>
+      <p class="admin-subtitle">Edit images and options for each category on the custom experience form.</p>
+
+      <div id="sectionsContainer" class="admin-sections"></div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
