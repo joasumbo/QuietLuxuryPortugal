@@ -886,7 +886,16 @@ a:hover {
 
   .nav__cta {
     padding: 0.7rem 2rem !important;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.95rem !important;
+    letter-spacing: 0.12em !important;
+    background: var(--gold) !important;
+    color: var(--black) !important;
+    border-radius: 2px;
+  }
+
+  .nav__cta:hover {
+    background: var(--white) !important;
   }
 
   /* Hero */

@@ -75,10 +75,12 @@
           var optRes = await sb.from('section_options').select('*').order('sort_order');
 
           sections = res.data.map(function (s) {
+            var dbImages = (imgRes.data || []).filter(function (i) { return i.section_id === s.id; });
+            var fallbackSection = FALLBACK.find(function (f) { return f.slug === s.slug; });
             return {
               name: s.name,
               slug: s.slug,
-              images: (imgRes.data || []).filter(function (i) { return i.section_id === s.id; }),
+              images: dbImages.length > 0 ? dbImages : (fallbackSection ? fallbackSection.images : []),
               options: (optRes.data || []).filter(function (o) { return o.section_id === s.id; })
             };
           });
