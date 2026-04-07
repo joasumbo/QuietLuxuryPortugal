@@ -10,27 +10,52 @@
   var FALLBACK = [
     {
       name: 'Monuments', slug: 'monuments',
-      images: [],
+      images: [
+        { image_url: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=800&auto=format&fit=crop', alt_text: 'Batalha Monastery' },
+        { image_url: 'https://images.unsplash.com/photo-1588286292171-7a1079b3ada6?q=80&w=800&auto=format&fit=crop', alt_text: 'Alcobaça Monastery' },
+        { image_url: 'https://images.unsplash.com/photo-1603917236498-1a05e72e0d79?q=80&w=800&auto=format&fit=crop', alt_text: 'Convent of Christ Tomar' },
+        { image_url: 'https://images.unsplash.com/photo-1564420228450-d1bca17a3605?q=80&w=800&auto=format&fit=crop', alt_text: 'University of Coimbra' }
+      ],
       options: ['Batalha Monastery', 'Alcobaça Monastery', 'Convent of Christ (Tomar)', 'University of Coimbra', 'Leiria Castle']
     },
     {
       name: 'Cities & Areas', slug: 'cities',
-      images: [],
+      images: [
+        { image_url: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?q=80&w=800&auto=format&fit=crop', alt_text: 'Coimbra historic center' },
+        { image_url: 'https://images.unsplash.com/photo-1601224860498-e3f1e8a3c737?q=80&w=800&auto=format&fit=crop', alt_text: 'Aveiro canals' },
+        { image_url: 'https://images.unsplash.com/photo-1597659840241-37e2b4f0a27f?q=80&w=800&auto=format&fit=crop', alt_text: 'Nazaré coastal view' },
+        { image_url: 'https://images.unsplash.com/photo-1613063261829-96df686d4498?q=80&w=800&auto=format&fit=crop', alt_text: 'Óbidos medieval town' }
+      ],
       options: ['Coimbra', 'Aveiro', 'Nazaré', 'Óbidos', 'Tomar', 'Fátima', 'Hidden villages']
     },
     {
       name: 'Gastronomy', slug: 'gastronomy',
-      images: [],
+      images: [
+        { image_url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop', alt_text: 'Fine dining experience' },
+        { image_url: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop', alt_text: 'Wine tasting' },
+        { image_url: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop', alt_text: 'Portuguese cuisine' },
+        { image_url: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop', alt_text: 'Food market' }
+      ],
       options: ['Wine tasting', 'Traditional food', 'Fine dining', 'Food markets', 'Local sweets']
     },
     {
       name: 'Points of Interest', slug: 'points',
-      images: [],
+      images: [
+        { image_url: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop', alt_text: 'Scenic Portuguese landscape' },
+        { image_url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop', alt_text: 'Nature park' },
+        { image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop', alt_text: 'Coastal viewpoint' },
+        { image_url: 'https://images.unsplash.com/photo-1504870712357-65ea720d6078?q=80&w=800&auto=format&fit=crop', alt_text: 'Cultural landmark' }
+      ],
       options: ['Coastal views', 'Nature parks', 'Religious sites', 'Scenic viewpoints', 'Cultural landmarks']
     },
     {
       name: 'Activities', slug: 'activities',
-      images: [],
+      images: [
+        { image_url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop', alt_text: 'Boat tour' },
+        { image_url: 'https://images.unsplash.com/photo-1502680390548-bdbac40a5781?q=80&w=800&auto=format&fit=crop', alt_text: 'Surfing lessons' },
+        { image_url: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=800&auto=format&fit=crop', alt_text: 'Spa and wellness' },
+        { image_url: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop', alt_text: 'Cooking class' }
+      ],
       options: ['Boat tours', 'Surfing lessons', 'Horse riding', 'Spa & wellness', 'Cooking classes']
     }
   ];
