@@ -197,18 +197,98 @@
   function buildImageItem(img, list) {
     var item = document.createElement('div');
     item.className = 'admin-sub__item';
-    item.innerHTML =
+
+    // display row
+    var display = document.createElement('div');
+    display.className = 'admin-sub__item-display';
+    display.innerHTML =
       '<img src="' + esc(img.image_url) + '" alt="" class="admin-sub__item-img" onerror="this.style.display=\'none\'">' +
       '<span class="admin-sub__item-text">' + esc(img.image_url) + '</span>';
+    item.appendChild(display);
+
+    // edit form (hidden)
+    var editForm = document.createElement('div');
+    editForm.className = 'admin-sub__item-edit';
+    editForm.hidden = true;
+    editForm.innerHTML =
+      '<input type="url" class="admin-edit-url" value="' + esc(img.image_url) + '" placeholder="Image URL">' +
+      '<input type="text" class="admin-edit-alt" value="' + esc(img.alt_text || '') + '" placeholder="Alt text">';
+    item.appendChild(editForm);
+
+    // buttons
+    var btns = document.createElement('div');
+    btns.className = 'admin-sub__item-btns';
+
+    var editBtn = document.createElement('button');
+    editBtn.className = 'admin-btn admin-btn--outline admin-btn--small';
+    editBtn.textContent = 'Edit';
+
+    var saveBtn = document.createElement('button');
+    saveBtn.className = 'admin-btn admin-btn--gold admin-btn--small';
+    saveBtn.textContent = 'Save';
+    saveBtn.hidden = true;
+
+    var cancelBtn = document.createElement('button');
+    cancelBtn.className = 'admin-btn admin-btn--outline admin-btn--small';
+    cancelBtn.textContent = 'Cancel';
+    cancelBtn.hidden = true;
 
     var del = document.createElement('button');
-    del.className = 'admin-btn admin-btn--danger';
+    del.className = 'admin-btn admin-btn--danger admin-btn--small';
     del.textContent = 'Remove';
+
+    editBtn.addEventListener('click', function () {
+      display.hidden = true;
+      editForm.hidden = false;
+      editBtn.hidden = true;
+      del.hidden = true;
+      saveBtn.hidden = false;
+      cancelBtn.hidden = false;
+    });
+
+    cancelBtn.addEventListener('click', function () {
+      editForm.querySelector('.admin-edit-url').value = img.image_url;
+      editForm.querySelector('.admin-edit-alt').value = img.alt_text || '';
+      display.hidden = false;
+      editForm.hidden = true;
+      editBtn.hidden = false;
+      del.hidden = false;
+      saveBtn.hidden = true;
+      cancelBtn.hidden = true;
+    });
+
+    saveBtn.addEventListener('click', async function () {
+      var newUrl = editForm.querySelector('.admin-edit-url').value.trim();
+      var newAlt = editForm.querySelector('.admin-edit-alt').value.trim();
+      if (!newUrl) return;
+
+      saveBtn.textContent = 'Saving...';
+      saveBtn.disabled = true;
+      var res = await sb.from('section_images').update({ image_url: newUrl, alt_text: newAlt }).eq('id', img.id);
+      saveBtn.textContent = 'Save';
+      saveBtn.disabled = false;
+
+      if (!res.error) {
+        img.image_url = newUrl;
+        img.alt_text = newAlt;
+        var preview = display.querySelector('.admin-sub__item-img');
+        preview.src = newUrl;
+        preview.style.display = '';
+        display.querySelector('.admin-sub__item-text').textContent = newUrl;
+        cancelBtn.click();
+      }
+    });
+
     del.addEventListener('click', async function () {
       var res = await sb.from('section_images').delete().eq('id', img.id);
       if (!res.error) item.remove();
     });
-    item.appendChild(del);
+
+    btns.appendChild(editBtn);
+    btns.appendChild(saveBtn);
+    btns.appendChild(cancelBtn);
+    btns.appendChild(del);
+    item.appendChild(btns);
 
     return item;
   }

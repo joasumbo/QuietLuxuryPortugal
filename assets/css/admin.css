@@ -280,6 +280,15 @@ body {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 4px;
+  flex-wrap: wrap;
+}
+
+.admin-sub__item-display {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex: 1;
+  min-width: 0;
 }
 
 .admin-sub__item-text {
@@ -296,6 +305,36 @@ body {
   height: 40px;
   object-fit: cover;
   border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.admin-sub__item-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-sub__item-edit input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(198, 168, 107, 0.25);
+  padding: 0.5rem 0.8rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--white-bright);
+  border-radius: 4px;
+  outline: none;
+}
+
+.admin-sub__item-edit input:focus {
+  border-color: var(--gold);
+}
+
+.admin-sub__item-btns {
+  display: flex;
+  gap: 0.4rem;
   flex-shrink: 0;
 }
 
